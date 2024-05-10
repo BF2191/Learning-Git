@@ -33,7 +33,6 @@ PART 1: Using the ELEMENT Selector:
         * box shadow with an x offset of 2 pixels, y offset of 2 pixels, blur of 2 pixels, spread radius of 1 pixel, a, rgb color of black with a transparency of 0.5. (See documentation https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
 * Step 5: The top image has a caption, give it a font color of rgb(0, 58, 66).
 * Step 6: Align the paragraph in the footer to the center.(See documentation https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
-
 -----------------------------------------------------
 
 PART 2: Using ID or CLASS Selectors: 
@@ -69,10 +68,12 @@ html {
   background: linear-gradient(180deg, #84daf5, #89ffff, #affffa, #ffffff);
 }
 body {
+  margin: 1rem 5rem;
 }
 
 h1 {
   text-align: center;
+  filter: drop-shadow(2px 2px 1px #0f6a9e);
 }
 h2 {
   margin: 4rem auto 1rem auto;
@@ -80,6 +81,7 @@ h2 {
 }
 p,
 li {
+  font-size: 20px;
 }
 ol {
   padding: 20px;
@@ -89,13 +91,18 @@ ol li {
   padding: 10px 0;
 }
 img {
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
 figcaption {
   text-align: center;
+  color: rgb(0, 58, 66);
   font-weight: bold;
 }
 footer {
   margin: 2rem 0 2rem 0;
+  text-align: center;
 }
 
 /* ---CUSTOM CLASS NAME SELECTORS--- */
@@ -103,6 +110,7 @@ footer {
 .banner-div {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 #banner-long {
   max-width: 100%;
@@ -114,6 +122,7 @@ footer {
 .img-div {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .tips-div {
@@ -125,7 +134,9 @@ footer {
   max-width: 800px;
   margin: 5rem auto;
   color: rgb(253, 197, 132);
+  border-radius: 1rem;
   padding: 1rem 2rem;
+  background-color: rgb(0, 58, 66);
 }
 .top-places-div h2 {
   text-align: center;
@@ -143,6 +154,8 @@ footer {
 
 @media only screen and (max-width: 1100px) {
   .tips-div {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -151,7 +164,7 @@ footer {
     margin: 1rem;
   }
   p,
-  li {
+   li {
     font-size: 16px;
   }
   .img-div img {
@@ -160,9 +173,9 @@ footer {
   .tips-div img {
     width: 230px;
   }
-  #banner-long {
+  #banner-long {display: none;
   }
-  #banner-short {
+  #banner-short {display: block;
   }
 }
 /* ------------------------- */
